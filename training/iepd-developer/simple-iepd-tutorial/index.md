@@ -2,24 +2,31 @@
 title: Simple IEPD Tutorial
 short: Simple IEPD Tutorial
 icon: fa-envelope-o
-description: This tutorial shows you how to create a very simple IEPD set. Once you are comfortable with the process and output, you can move on to more complex IEPDs.
+description: This tutorial shows you how to create a very simple [IEPD](/reference/iepd/ "IEPD"). Once you are comfortable with the process and output, you can move on to more complex IEPDs.
 ---
 
 {{ page.description}}
 
-## In the Beginning
+In this tutorial we are going to walk through the creation of a simple IEPD using the [IEPD Lifecycle](/reference/iepd/lifecycle/ "IEPD Lifecycle"). These steps include:
 
-You observe a person who displays superhuman powers (a superhero). You want to inform others of this person's presence and unique characteristics.
+1. Scenario Planning - decide what information to include in your exchange
+2. Analyze Requirements - break down business context and data requirements
+3. Map and Model Requirements - begin mapping your data to NIEM components
+4. Build and Validate - create a set of exchange-specific, NIEM-conformant XML schemas
+5. Assemble and Document - package all files into a self-contained archive file
+6. Publish and Implement - publish the IEPD for search, discovery, and reuse
+
+---
 
 ## Scenario Planning
 
-Scenario Planning is the first step in the IEPD development process.
+Scenario Planning is the first step in the IEPD development process. In this step you develop a high level scope and goal of the intended information exchange. Decide what information needs to be included.
 
-You talk to personal and professional associates and decide the information should be distributed so that others may learn, or be able to add to the group's knowledge, about the superhero.
+You observe a person who displays superhuman powers (a SuperHero). As a government official tasked with tracking super powered individuals, you want to inform others of this person's presence and unique characteristics. You talk to personal and professional associates and decide the information should be distributed so that others may learn, or be able to add to the group's knowledge about the SuperHero.
 
-Determine the information that would be useful to gather and the resources needed to obtain and distribute the information. To help visualize the information flow and content, you can develop a [diagram](../scenario-planning/ "Use Case, Business Process, or Sequence") to graphically show the actors and information flow for your scenario. A visual representation can be very useful especially if the scenario is complex.
+Determine the information that would be useful to gather and the resources needed to obtain and distribute the information. To help visualize the information flow and content, you can develop a [use case, business process, or sequence diagram](../scenario-planning/ "Use Case, Business Process, or Sequence") to graphically show the actors and information flow for your scenario. A visual representation can be useful especially if the scenario is complex.
 
-You decide that acquiring and distributing the person's name is enough.
+You decide that acquiring and distributing the super powered person's name is enough.
 
 {:.note}
 >The NIEM data model is very large. It is highly likely that the type and format of the data you want to acquire and distribute is already defined. If not, then one of the several [NIEM Communities]({{ site.data.links.niem_communities }} "NIEM Communities") may have tackled a similar problem and developed an information exchange package (IEP) that comes close to meeting your needs. A search through their published resources can help.
@@ -27,11 +34,11 @@ You decide that acquiring and distributing the person's name is enough.
 {:.example}
 >Scenario Information Acquisition and Flow
 >
->1. Witness sees a Superhero display powers.
->1. Witness obtains the Superhero's name.
->1. Witness distributes information to other parties.
+>1. Witness sees a SuperHero display powers.
+>1. Witness obtains the SuperHero's name.
+>1. Witness distributes information to other parties using an IEPD.
 >
->You decide the information flow looks like this (sequence diagram):
+>The information flow is illustrated in the following diagram:
 >![Information Flow](Information-Flow-Diagram.png "Information Flow")
 
 {:.quiz}
@@ -46,10 +53,10 @@ After Scenario Planning, you want to analyze the scenario's requirements for the
 
 The information exchange scenario now needs to be broken down into finer detail to understand and document the business context and data requirements. There is no prescribed way to to do this, nor is the knowledge of NIEM or XML Schema required. The most important idea to keep in mind is that the subject matter experts capture the requirements and analysis with thorough detail.
 
-The first item you need to determine is the single, main, focal point or purpose for the exchange. This is technically known as the root element. For this simple IEPD, that is the superhero.
+The first item you need to determine is the single, main, focal point or purpose for the exchange. This is technically known as the root element. For this simple IEPD, that is the SuperHero.
 
 {:.example}
-> root element = `Person`. Assume the superhero is a human person.
+> root element = `Person`. Assume the SuperHero is a human person.
 
 The content portion of the requirements analysis can be done however you prefer: document, spreadsheet, or model diagram.  The kinds of information to capture include the following:
 
@@ -69,7 +76,7 @@ The content portion of the requirements analysis can be done however you prefer:
 - Code sets – This is a list of allowable values, such as a state code list or an eye color list.  Code sets may come from a standard or may be custom-defined.
 - Conditions and business rules – There may be certain restrictions on the content that need to be represented.  Examples include restrictions on individual values (such as a number that cannot be less than zero or a string that must have a certain number of characters) and conditional restraints (such as if the SSN is not provided, then Last Name and Birth Date are required), etc.
 
-The other requirements of the exchange (e.g., technical, security and privacy, performance, reporting) should be described in this stage as well.
+The other requirements of the exchange (e.g., technical, security and privacy, performance, reporting) should be described in this step as well.
 
 {:.quiz}
 > Answer a few questions in a [short quiz](quiz-2).
@@ -132,7 +139,7 @@ For the final step in this phase, [use the SSGT](../map-and-model/ "SSGT Documen
 2. Under "Generate Subset Schema," click "Save Subset Schema to a file."
 3. Under "Generate Wantlist," click "Save current wantlist to a file."
 
-The Subset Schema and the Wantlist will form a substantial part of your IEPD.
+The Subset Schema and the Wantlist will form a substantial part of your IEPD. We'll be using these files in the next step, so remember where you save them.
 
 {:.quiz}
 > Answer a few questions in a [short quiz](quiz-3).
@@ -146,13 +153,29 @@ You create and validate a set of exchange-specific, NIEM-conformant XML schemas 
 
 Obtain the documentation the SSGT created for you in [Map and Model](#map-and-model-requirements). This comprises much of your IEPD for the simple exchange, in particular the schema subset.
 
+Create a root directory folder for your IEPD. The name should be meaningful and include the NIEM version and a revision number. For this tutorial we'll name our root directory folder **superhero-iepd-4.0-rev-01**. Create a subdirectory under your root directory called **base-xsd**. Place the subset schema and wantlist files in the base-xsd folder like in the following example.
+
+{:.example}
+>
+>superhero-iepd-4.0-rev-01
+>- base-xsd
+>   - niem
+>      - niem-core/4.0
+>      - proxy/xsd/4.0
+>      - utility
+>         - appinfo/4.0
+>         - conformanceTargets/3.0
+>         - structures/4.0
+>      - wantlist.xml
+>      - xml-catalog.xml
+
 For the purpose of this tutorial, the local exchange components all map to NIEM. In a more complex IEP, there will likely be components that do not map. These would become part of an extension schema that is included in an IEPD, and is discussed in another tutorial.
 
-### Schema Instance Example
+### Schema Example
 
-There is no automated way to generate the schema documents you need beyond what the SSGT provides. The most straightforward approach is to copy an existing known good document and alter it to suit your exchange.
+There is no automated way to generate the instance schema document. You can copy an existing example and alter it to suit your exchange.
 
-With the mapping components handy, modify an instance schema document so that it looks like the following (with values added to `nc:PersonGivenName` and `nc:PersonSurName`).
+With the mapping components handy, create an instance schema XML document so that it looks like the following (with values added to `nc:PersonGivenName` and `nc:PersonSurName`). Place this file in a subdirectory folder called **iep-sample** under the root directory.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -170,12 +193,11 @@ With the mapping components handy, modify an instance schema document so that it
 
 ## Assemble and Document
 
-You prepare and package all related files for the IEPD into a single, self‐contained, self-documented, portable archive file (e.g., zip) according to the [recommended file-and-folder structure](../assemble-and-document/#assemble-the-iepd).
+You prepare and package all related files for the IEPD into a single, self‐contained, self-documented, portable archive file (e.g., zip) according to the [recommended file-and-folder structure](../assemble-and-document/#assemble-the-iepd). The following example shows where to place relevant artifacts under the root directory.  
 
 {:.example}
->The root directory name should be meaningful and include the NIEM version and a revision number.
 >
->superhero-iepd-4.0-rev-02
+>superhero-iepd-4.0-rev-01
 >- base-xsd
 >   - niem
 >      - niem-core/4.0
@@ -198,7 +220,7 @@ Additional artifacts are required in an IEPD. An mpd-catalog is required and mus
 
 **IEPD Artifacts:**
 
-- **NIEM schema subset** (required)  – The output from the SSGT from the previous stage.
+- **NIEM schema subset** (required) – The output from the SSGT from the Map and Model step.
 
 - **[mpd-catalog]({{site.data.links.mpd_spec}}#section_5.1)** (required) – A specially-formatted XML instance that contains metadata about the IEPD.
    - Catalog metadata includes: 
@@ -219,15 +241,15 @@ Additional artifacts are required in an IEPD. An mpd-catalog is required and mus
 
 - **[xml-catalog]({{site.data.links.mpd_spec}}#section_5.5)** – An xml instance that describes mappings between external schema references and locally-cached equivalents. A basic xml-catalog will be generated with the subset and can be modified as necessary.
 
-- **[wantlist]({{site.data.links.mpd_spec}}#section_6.1)** – An xml file that contains the elements and types from NIEM that will be included within the subset schema for the exchange. In other words, it describes what an exchange "wants" from the NIEM data model.
+- **[wantlist]({{site.data.links.mpd_spec}}#section_6.1)** – An xml file that contains the elements and types from NIEM that will be included within the subset schema for the exchange. In other words, it describes what an exchange "wants" from the NIEM data model. Output from the SSGT during the Map and Model step.
 
-You should then perform a peer review to ensure artifact consistency within the IEPD and with other IEPDs.
+Once you have assembled all required artifacts, compress the root directory folder **superhero-iepd-4.0-rev-01** to a self-contained archive (e.g., zip) file. You should then perform a peer review to ensure artifact consistency within the IEPD and with other IEPDs.
 
 ---
 
 ## Publish and Implement
 
-Once all artifacts have been assembled, you can implement the IEPD into production and publish the IEPD for search, discovery, and reuse.
+Once all artifacts have been assembled and you have compressed your IEPD to a single archive file, you can implement the IEPD into production and publish the IEPD for search, discovery, and reuse.
 
 Publish an IEPD to all repositories that are relevant to the exchange. Many of the [NIEM Communities]({{ site.data.links.niem_communities }} "NIEM Communities") have IEPD repositories where you can search for a package that is suitable or adaptable to your exchange. You may be able to find a home for your exchange with one of them.
 
