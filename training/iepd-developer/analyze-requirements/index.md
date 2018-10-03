@@ -47,3 +47,5 @@ Each school in the city receives a monthly report of every child in their school
 ### Data Quality Requirements
 
 Data Quality Requirements should be taken into consideration once above requirements are discussed.
+
+After you have analyzed and determined your exchange requirements, proceed to the [Map and Model](/training/iepd-developer/map-and-model/ "Map and Model") phase in the IEPD development process.
