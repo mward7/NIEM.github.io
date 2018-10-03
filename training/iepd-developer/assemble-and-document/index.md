@@ -1,7 +1,7 @@
 ---
 title: Assemble and Document
 icon: fa-envelope-o
-description: Assemble and Document is the next phase in IEPD development after the Build and Validate phase.
+description: During the [assemble and document](/reference/iepd/lifecycle/assemble-and-document/ "Reference - Assemble and Document") phase you prepare and package all related files for the IEPD.
 ---
 
 {{ page.description}}
@@ -100,3 +100,5 @@ A good way to review an IEPD is to compare it to a checklist. The checklist shou
 - The exchange content model file is included and accurately represents the XML code in the schemas.
 - The XML catalog validates with the NIEM Model Package Description (MPD) catalog schema (XSD) and resides in the root directory of the MPD bearing the file name “mpd-catalog.xml.”
 - The change log is in the root directory of the IEPD, begins with the substring “changelog,” and records changes to previous IEPD schemas that are represented.
+
+Once you have assembled all required artifacts proceed to the [Publish and Implement](/training/iepd-developer/publish-and-implement/ "Publish and Implement") phase.

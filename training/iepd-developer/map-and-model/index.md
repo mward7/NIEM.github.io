@@ -1,7 +1,7 @@
 ---
 title: Map and Model
 icon: fa-envelope-o
-description: During the map and model phase, you compare your information exchange requirements to what's in NIEM, and then define a mapping between your requirements and NIEM content. You use a mapping document, which may be a spreadsheet or similar tabular form. 
+description: During the [map and model](/reference/iepd/lifecycle/map-and-model/ "Reference - Map and Model") phase, you compare your information exchange requirements to what's in NIEM, and then define a mapping between your requirements and NIEM content. You use a mapping document, which may be a spreadsheet or similar tabular form. 
 ---
 
 {{ page.description}}
@@ -62,7 +62,7 @@ After you complete the entries in the Source Data Columns, identify the NIEM ele
 
 1. If nothing is found that looks like a match, try searching by name, for synonyms, conceptual meaning, or by type. In this example, you found a possible match.<br>![Mapping Tool Example (SSGT)](assets/ssgtexample.png "Mapping Tool Example (SSGT)")
 
-1. Enter the match in the mapping document under "NIEM Element." Map objects that are conceptually and semantically equivalent. If the alignment is not easily understood, it is better to extend, which is explained in the schema [build and validate](/training/iepd-developer/build-and-validate "Build and Validate") process.<br>![Element](assets/mappingelement.png "Element")
+1. Enter the match in the mapping document under "NIEM Element." Map objects that are conceptually and semantically equivalent. If the alignment is not easily understood, it is better to extend, which is explained in the schema [Build and Validate](/training/iepd-developer/build-and-validate/ "Build and Validate") process.<br>![Element](assets/mappingelement.png "Element")
 
 1. Note the "type" associated with the NIEM element match and enter it under "NIEM Type."<br>![Element Type](assets/mappingtype.png "Element Type")
 
@@ -94,7 +94,7 @@ After you complete the entries in the Source Data Columns, identify the NIEM ele
 
 1. The **NIEM Element Path** is the path of the NIEM element within the NIEM model.  Join the tree elements together to make the path and enter that in the column.<br>![Element Path](assets/mappingfinal.png "Element Path")
 
-2. With the information you have now, you can begin the schema [build and validate](/reference/iepd/lifecycle/build-and-validate "Build and Validate") process.
+2. With the information you have now, you can begin the schema [Build and Validate](/training/iepd-developer/build-and-validate/ "Build and Validate") process.
 
 ### Model Searching Tips
 

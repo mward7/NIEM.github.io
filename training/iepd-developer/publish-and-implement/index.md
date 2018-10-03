@@ -1,7 +1,7 @@
 ---
 title: Publish and Implement
 icon: fa-envelope-o
-description: The publish and implement phase is the last phase of IEPD development.
+description: The [publish and implement](/reference/iepd/lifecycle/publish-and-implement/ "Reference - Publish and Implement") phase is the last phase of IEPD development.
 ---
 
 {{ page.description}}

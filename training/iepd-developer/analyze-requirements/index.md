@@ -1,7 +1,7 @@
 ---
 title: Analyze Requirements
 icon: fa-envelope-o
-description: The analyze requirements phase is the next step you take in IEPD development.  
+description: The [analyze requirements](/reference/iepd/lifecycle/analyze-requirements/ "Reference - Analyze Requirements") phase is the next step you take in IEPD development.  
 ---
 
 {{ page.description}}
@@ -48,4 +48,4 @@ Each school in the city receives a monthly report of every child in their school
 
 Data Quality Requirements should be taken into consideration once above requirements are discussed.
 
-After you have analyzed and determined your exchange requirements, proceed to the [Map and Model](/training/iepd-developer/map-and-model/ "Map and Model") phase in the IEPD development process.
+After you have analyzed and determined your exchange requirements, proceed to the [Map and Model](/training/iepd-developer/map-and-model/ "Map and Model") phase.

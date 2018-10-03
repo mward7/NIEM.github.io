@@ -1,7 +1,7 @@
 ---
 title: Build and Validate
 icon: fa-envelope-o
-description: During the build and validate phase, you create XML schemas and artifacts and verify they meet NIEM standards.
+description: During the [build and validate](/reference/iepd/lifecycle/build-and-validate/ "Reference - Build and Validate") phase, you create XML schemas and artifacts and verify they meet NIEM standards.
 ---
 
 {{ page.description}}
@@ -96,3 +96,5 @@ Do a manual review of each schema to address the NDR rules not checked within th
 3. Make the appropriate changes to the schema(s) to resolve each issue per mistakes made in the manual review.
 
 4. Validate the schemas again in the Conformance Validation Tool.
+
+Once you verify that your schemas meet NIEM standards, proceed to the [Assemble and Document](/training/iepd-developer/assemble-and-document/ "Assemble and Document") phase.
