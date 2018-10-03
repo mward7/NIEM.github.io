@@ -9,7 +9,7 @@ description: The scenario planning phase is the first step you take in IEPD deve
 
 {% include icon-list.html links=page.links %}
 
-In [scenario planning](/reference/iepd/lifecycle/scenario-planning/), the IEPD stakeholders decided and agreed on what will go into the package, and developed one or more diagrams from the following types:
+During [scenario planning](/reference/iepd/lifecycle/scenario-planning/), you meet with the IEPD stakeholders and together decide what information will go into the package. You should develop one or more diagrams from the following types:
 
 ### Use Case Diagram Example
 
