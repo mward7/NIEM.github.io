@@ -12,12 +12,20 @@
 
 ## Welcome to the future home of NIEM training
 
-We are currently working to modernize our training material which includes moving away from the [current online material](https://niem.gov/training) and into user-driven tutorials and reference content on GitHub. It’s an evolution based on how people learn these days.
+We are currently working to modernize our training material which includes moving away from the [current online material](https://niem.gov/training) and into user-driven tutorials and reference content on GitHub. It’s an evolution based on more current teaching techniques.
 
 The content in development will address the two types of training audiences we historically see:
 
-1. Someone who is a newcomer to NIEM and needs to get up to speed on how to do things. This could include managing domain model content, developing an exchange, implementing an exchange, publishing a data set, or reusing the vocabulary. If this is you, please see the training tracks below.
-2. Someone who is already familiar with NIEM and is looking for quick reference material to determine or verify how to do something. If this is you, please visit the [Reference](/reference/) section.
+- Someone who is a newcomer to NIEM and needs to get up to speed on how to do things. This could include: 
+  - Managing domain model content
+  - Developing an exchange
+  - Implementing an exchange
+  - Publishing a data set
+  - Reusing the vocabulary
+
+If this is you, please see the training tracks below.
+
+- Someone who is already familiar with NIEM and is looking for quick reference material to determine or verify how to do something. If this is you, please visit the [Reference](/reference/) section.
 
 This section represents our *work in progress*. As we knock out content, we push it out to the user community for [feedback](https://github.com/NIEM/NIEM.github.io/issues) and use.
 
